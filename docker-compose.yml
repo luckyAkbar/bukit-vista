@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  db:
+    build: postgres:14-alpine
+    volumes: "/var/lib/postgresql/bukit_vista/data:/var/lib/postgresql/data"
+    ports:
+      - "${PGPORT}:5432"
+    environment:
+      - POSTGRES_USER=${PGUSER}
+      - POSTGRES_PASSWORD=${PGPASSWORD}
+      - POSTGRES_DB=${PGDATABASE}
