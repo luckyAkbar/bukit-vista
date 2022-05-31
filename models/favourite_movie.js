@@ -13,8 +13,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   Favourite_Movie.init(
     {
-      id: DataTypes.UUID,
-      title: DataTypes.STRING,
+      id: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDv4,
+        primaryKey: true,
+      },
+      data: {
+        type: DataTypes.TEXT,
+        get() {
+          return JSON.parse(this.getDataValue("data"));
+        },
+      },
       user_id: {
         type: DataTypes.UUID,
         references: { model: "User", key: "id" },

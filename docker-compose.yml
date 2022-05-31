@@ -1,6 +1,16 @@
-version: '3'
+version: "3"
 
 services:
+  http:
+    build: .
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "${HTTP_SERVER_PORT}:${HTTP_SERVER_PORT}"
+    depends_on:
+      - db
+    networks:
+      - internal
   db:
     image: postgres:14-alpine
     volumes:
@@ -11,3 +21,9 @@ services:
       - POSTGRES_USER=${PGUSER}
       - POSTGRES_PASSWORD=${PGPASSWORD}
       - POSTGRES_DB=${PGDATABASE}
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge

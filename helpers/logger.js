@@ -1,9 +1,18 @@
-require('dotenv').config();
+require("dotenv").config();
 
-const pino = require('pino');
+const pino = require("pino");
+const expressPinoLogger = require("express-pino-logger");
 
 const logger = pino({
   level: process.env.LOG_LEVEL,
 });
 
-module.exports = logger;
+const loggerMiddleware = expressPinoLogger({
+  logger,
+  autoLogging: true,
+});
+
+module.exports = {
+  logger,
+  loggerMiddleware,
+};
