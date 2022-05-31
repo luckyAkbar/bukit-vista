@@ -46,8 +46,6 @@ const decrypt = (cipherText) => {
   }
 };
 
-console.log(encrypt("123456"));
-
 module.exports = {
   encrypt,
   decrypt,
