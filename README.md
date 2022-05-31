@@ -58,6 +58,10 @@ Here are the API specs to be followed
         - token (string)
     - otherwise
       - status: 404
+  - note:
+    - for testing only, you can use the default user credentials below:
+      - id: 1
+      - password: 123456
 - Search Movie
   <br> Used to get movie data from OMDB. Key to search are based on movie title.
   <br>descriptions:
