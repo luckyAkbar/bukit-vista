@@ -18,7 +18,7 @@
 
 ## Live Version
 
-if you want to see / use the live version of this app, feel free to point your request to [intern-test.luckyakbar.tech](intern-test.luckyakbar.tech)
+if you want to see / use the live version of this app, feel free to point your request to [https://intern-test.luckyakbar.tech](intern-test.luckyakbar.tech)
 
 ## How To Run
 
