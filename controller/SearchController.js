@@ -14,7 +14,9 @@ const search = async (req, res) => {
     });
   }
 
-  return apiResponse.OK(res, result);
+  return apiResponse.OK(res, {
+    result: result.Search,
+  });
 };
 
 module.exports = {
